@@ -1,28 +1,79 @@
+/* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e;
+    background-color: #0d0d0d;
     color: #fff;
     text-align: center;
+    overflow-x: hidden;
 }
 
+/* Navigation Bar */
 nav {
-    background: #333;
+    background: #111;
     padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0 10px cyan;
 }
 
 nav a {
-    color: white;
+    color: cyan;
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* Container */
 .container {
-    margin-top: 50px;
+    margin-top: 80px;
+    padding: 20px;
+    animation: glowBorder 3s infinite alternate;
 }
 
+/* Neon Glowing Effect */
+@keyframes glowBorder {
+    0% { box-shadow: 0 0 10px cyan; }
+    100% { box-shadow: 0 0 20px #00ffcc; }
+}
+
+/* Script List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #111;
+    padding: 10px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cyan;
+    transition: transform 0.3s;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+ul li a {
+    color: cyan;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Discord Logo */
 .discord-logo {
     width: 100px;
     height: auto;
@@ -31,4 +82,15 @@ nav a {
 
 .discord-logo:hover {
     transform: scale(1.1);
+}
+
+/* Smooth Page Transition */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
